@@ -6,18 +6,9 @@ implementação. */
 #include <stdio.h>
 #include <stdlib.h>
 #include "item.h"
+#include "insert_sort.c"
 
 #define CUTOFF 20
-
-void insert_sort(Item *a, int lo, int hi){
-    int min;
-    for (int i=lo; i<hi; i++){
-        min = i;
-        for (int j=i+1; j<hi; j++)
-            if (less(key(a[j]),key(a[min]))) min=j;
-        exch(key(a[i]),key(a[min]));
-    }
-}
 
 void merge(Item *a, Item *aux, int lo, int mid, int hi) {
     for (int k = lo; k <= hi; k++)
